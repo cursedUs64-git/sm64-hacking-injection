@@ -6,15 +6,23 @@
 /******************** Custom injection ********************/
 .headersize SEC_CUSTOM_HEADERSIZE
 .orga SEC_CUSTOM_ROM
+.area SEC_CUSTOM_SIZE
+
+// Recommended to align functions evenly (normally 4 bytes) to make it console compatible and avoid runtime errors.
 
 .importobj "obj/custom/maroo_animaso.o"
 .align 4
+
+.headersize 0-orga() // the pointers are relative to the start of the animation because the Animation struct's addressing layout is based on DMA struct
+.definelabel @anim_d1_start, orga()
+.importobj "obj/anims/windemoAold.o"
+.definelabel @anim_d1_size, orga()-@anim_d1_start
 
 .definelabel mario_patchable_table_TWO, org()
 .word @anim_d1_start, @anim_d1_size
 .align 4
 
-// Recommended to align functions evenly (normally 4 bytes) to make it console compatible and avoid runtime errors.
+.endarea
 
 /******************** Custom segment loader ********************/
 
@@ -50,10 +58,5 @@ JAL     mario_anim_load_patchable_table
 .area 0x802584dc - 0x80258420, 0
 .importobj "obj/hooks/act_star_dance.o"
 .endarea
-
-.headersize 0-orga() // the pointers are relative to the start of the animation
-.definelabel @anim_d1_start, orga()
-.importobj "obj/anims/windemoAold.o"
-.definelabel @anim_d1_size, orga()-@anim_d1_start
 
 .close

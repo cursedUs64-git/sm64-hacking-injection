@@ -1,15 +1,12 @@
 #include "basicheader.h"
 
-// Stored over padding bytes at the end of ROM
-// These addresses may be changed to anywhere that has ample free space
-
-#define SEC_CUSTOM_ROM  0x007CC6C0
-#define SEC_CUSTOM_RAM  0x80370000
-#define SEC_CUSTOM_HEADERSIZE (SEC_CUSTOM_RAM - SEC_CUSTOM_ROM)
-#define SEC_CUSTOM_SIZE 0x00006000
+// Take in the labels from armips using externs.
+extern u8 SEC_CUSTOM_RAM[];
+extern u8 SEC_CUSTOM_ROM[];
+extern u8 SEC_CUSTOM_SIZE[];
 
 void dma_read(u8 *dest, u8 *srcStart, u8 *srcEnd);
 
 void cahstom_loads(void) {
-    dma_read(SEC_CUSTOM_RAM, SEC_CUSTOM_ROM, SEC_CUSTOM_ROM + SEC_CUSTOM_SIZE /* srcEnd */);
+    dma_read(/* dest */ SEC_CUSTOM_RAM, /* srcStart */ SEC_CUSTOM_ROM, /* srcEnd */ (u8 *)((u32)SEC_CUSTOM_ROM + (u32)SEC_CUSTOM_SIZE)); // Pointer casting to make the "arrays" able to operate arithmetically
 }
