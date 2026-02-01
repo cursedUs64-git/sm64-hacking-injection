@@ -18,12 +18,12 @@
 .importobj "obj/anims/windemoAold.o"
 .definelabel @anim_d1_size, orga()-@anim_d1_start
 
+// After adding animations, go back to original headersize
+.headersize SEC_CUSTOM_HEADERSIZE
+
 .definelabel mario_patchable_table_TWO, org()
 .word @anim_d1_start, @anim_d1_size
 .align 4
-
-// After adding animations, go back to original headersize
-.headersize SEC_CUSTOM_HEADERSIZE
 
 .endarea
 
