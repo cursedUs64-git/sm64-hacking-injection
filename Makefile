@@ -1,6 +1,4 @@
-# ==========================
-# C Injection Engine v2
-# ==========================
+# SM64 Injection Template
 
 include util.mk
 
@@ -19,7 +17,7 @@ ARMIPS          := $(TOOLS_DIR)/armips # God i need to update armips' code...
 N64CKSUM        := $(SM64TOOLS_DIR)/n64cksum
 PYTHON := python3 # Assuming python is called python3 in the host (python >=3 is necessary)
 MINIFIND        := $(PYTHON) $(TOOLS_DIR)/util/minifind.py
-GEN_ARMIPS_SYMS := $(PYTHON) $(TOOLS_DIR)/util/gen_armips_syms.py # this will be used in later revisions
+GEN_ARMIPS_SYMS := $(PYTHON) $(TOOLS_DIR)/util/gen_armips_syms.py # this will be used in later revisions to generate definelabels for symbols that can be used by armips
 
 ROM_IN          := baserom.us.z64
 ROM_OUT         := patched.us.z64
@@ -94,7 +92,6 @@ info:
 # ----------------------------
 $(CUSTOM_OBJS): $(INC_C_SRCS)
 build: tools info obj_dirs $(CUSTOM_OBJS)
-	@rm -f a.out
 	@echo "Build finished successfully."
 
 # ----------------------------
@@ -125,7 +122,7 @@ $(OBJ_ROOT_DIR)/%.o: $(SRC_ROOT_DIR)/%.c | obj_dirs tools
 # ----------------------------
 # Inject into the ROM
 # ----------------------------
-inject: $(BASEROM)
+inject: $(ROM_IN) build
 	@echo "Injecting into the ROM via armips"
 	@$(ARMIPS) inject.asm -root . $(ARMIPSFLAGS)
 	@$(N64CKSUM) $(ROM_OUT) $(ROM_OUT)
@@ -136,8 +133,7 @@ inject: $(BASEROM)
 # ----------------------------
 clean:
 	@rm -rf $(OBJ_ROOT_DIR) $(TMP_DIR) $(ROM_OUT)
-	@$(MINIFIND) . -type f -name '*.d' | xargs -r rm -f
-	@$(MINIFIND) $(SRC_ROOT_DIR) -type f -name '*.inc.c' | xargs -r rm -f
+	@$(MINIFIND) $(SRC_ROOT_DIR) -type f -name '*.*.inc.c' | xargs -r rm -f # this implies all picture stuff to end with *.(type of texture).inc.c
 	@echo "Clean done."
 
 distclean: clean

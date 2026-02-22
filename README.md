@@ -1,12 +1,12 @@
-# Super Mario 64 C Injection Engine v2
+# SM64 Injection Template
 
-Super Mario 64 C Injection Engine v2 by RealGrude, SuperMarioXerox13 and CalebV64.
+SM64 Injection Template by AmitabhTechz, Xerox and CalebV64.
 
-This is an example setup for injecting compiled C code into Super Mario 64.
+This is an example setup for injecting data into SM64. This template can also be utilised for other things, aside from SM64.
 
 # Dependencies
 
-### The following tools are required to build (for NT and GNU/Linux at least):
+### The following tools are required to build (for NT and GNU/Linux atleast):
 
 * GNU toolchain
 * MSYS2 or any MingW64 subsystem (for NT)
@@ -26,4 +26,4 @@ obj/ .............. Object (.o) files
 
 # Licensing
 
-Super Mario 64 C Injection Engine v2 is released under the Zero Clause BSD license. See the file LICENSE for more details.
+SM64 Injection Template is released under the Zero Clause BSD license. See the file LICENSE for more details.

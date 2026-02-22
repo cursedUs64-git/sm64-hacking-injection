@@ -592,4 +592,5 @@ anim_CF                   u16          indices    0xFC       0x578C98
 anim_CF                   s16          values     0xA94      0x578D94  
 anim_D0                   Animation               0x14       0x579828  
 anim_D0                   u16          indices    0xFC       0x579840  
-anim_D0                   s16          values     0x2DA      0x57993C  
+anim_D0                   s16          values     0x2DA      0x57993C
+#align by 16 (0x579c16 + 0x10), so demo inputs start at 0x579c20

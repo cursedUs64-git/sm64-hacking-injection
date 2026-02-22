@@ -2,6 +2,8 @@
 
 // thx trole engen
 extern u32 mario_patchable_table_TWO[];
+
+// A separate load_patchable_table function. (the vanilla one isn't used for mario's animations anymore)
 s32 mario_anim_load_patchable_table(struct DmaHandlerList *list, s32 index) {
     s32 ret = FALSE;
     struct DmaTable *table = list->dmaTable;

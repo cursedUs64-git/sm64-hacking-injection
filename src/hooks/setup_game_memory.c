@@ -1,23 +1,30 @@
 #include "basicheader.h"
 
-#define _entrySegmentRomStart 0x00108a10
-#define _entrySegmentRomEnd 0x00108a40
-#define _segment2_mio0SegmentRomStart 0x00800000 // Might aswell change load_segment_decompress to be load_segment so people don't get confused?
-#define _segment2_mio0SegmentRomEnd 0x0081bb64 // align bruh :angry: it was 81bb63 before. Real hardwaros moment
+// #define _entrySegmentRomStart 0x00108a10
+// #define _entrySegmentRomEnd 0x00108a40
+
+// NOTE: Make changes for these macros if using a compressed ROM as segment addresses may vary.
+
+// comment load_segment and uncomment load_segment_decompress if you want
+// #define _segment2_mio0SegmentRomStart 0x00800000 // pretty confusing but the stub mio0 header does shit idk
+#define _segment2_mio0SegmentRomEnd 0x0081bb64 // align it by 2. it was 81bb63 before. Makes it work on real hardware.
+
 #define _segment2_SegmentRomStart 0x00803156
 #define _segment2_SegmentRomEnd _segment2_mio0SegmentRomEnd
 
+// resolve undefined errors
 extern u16 gZBuffer[];
 extern u16 gFramebuffer0[];
 extern u16 gFramebuffer1[];
 extern u16 gFramebuffer2[];
 
-extern cahstom_loads(); // i love silencing errors
-void dma_read(u8 *dest, u8 *srcStart, u8 *srcEnd); // silence errors 2
-void setup_dma_table_list(struct DmaHandlerList *list, void *srcAddr, void *buffer); // silence errors 3
+// addresses resolved by armips, the linker
+extern u8 _entrySegmentRomStart[];
+extern u8 _entrySegmentRomEnd[];
 
+// Basically the vanilla function, except it has changed addresses for load_segment and also calls the custom_load function for more memory.
 void setup_game_memory(void) {
-    // UNUSED u8 filler[8];
+    // UNUSED u8 filler[8]; // save space
 
     // Setup general Segment 0
     set_segment_base_addr(0, (void *) 0x80000000);
@@ -39,9 +46,14 @@ void setup_game_memory(void) {
     setup_dma_table_list(&gDemoInputsBuf, gDemoInputs, gDemoInputsMemAlloc);
     // Setup Level Script Entry
     load_segment(0x10, (void *)_entrySegmentRomStart, (void *)_entrySegmentRomEnd, MEMORY_POOL_LEFT);
+
     // Setup Segment 2 (Fonts, Text, etc)
-    // load_segment_decompress(2, (void *)_segment2_mio0SegmentRomStart, (void *)_segment2_mio0SegmentRomEnd); // i was gonna shift this to cahstom_loads but on an mangler extended rom it crashes? lmfao rom mangler moment
+
+    // CHANGE START
+    // load_segment_decompress(2, (void *)_segment2_mio0SegmentRomStart, (void *)_segment2_mio0SegmentRomEnd); // uncommented because register A3 is not set
     load_segment(2, (void *)_segment2_SegmentRomStart, (void *)_segment2_SegmentRomEnd, MEMORY_POOL_LEFT);
 
-    cahstom_loads();
+    custom_loads();
+
+    // CHANGE END
 }
