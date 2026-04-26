@@ -36,6 +36,8 @@
 #include "seq_ids.h"
 #include "game/ingame_menu.h"
 #include "game/memory.h"
+#include "geo_commands.h"
+#include "level_commands.h"
 
 
 #define o gCurrentObject

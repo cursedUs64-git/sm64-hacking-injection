@@ -17,9 +17,9 @@
 
 // NOTE: Be sure to edit sZoomOutAreaMasks in camera.c, as there isnt a good way to macro those right now.
 // TODO: Figure something out for sZoomOutAreaMasks?
-STUB_LEVEL(  "",               LEVEL_UNKNOWN_1,        COURSE_NONE,                                 20000,    0x00, 0x00, 0x00, _,         _)
-STUB_LEVEL(  "",               LEVEL_UNKNOWN_2,        COURSE_NONE,                                 20000,    0x00, 0x00, 0x00, _,         _)
-STUB_LEVEL(  "",               LEVEL_UNKNOWN_3,        COURSE_NONE,                                 20000,    0x00, 0x00, 0x00, _,         _)
+DEFINE_LEVEL("POOP",           LEVEL_UNKNOWN_1,        COURSE_NONE,     castle,           generic,  20000,    0x00, 0x00, 0x00, _,         _)
+DEFINE_LEVEL("ATHLETIC",       LEVEL_UNKNOWN_2,        COURSE_NONE,     athletic,         generic,  20000,    0x00, 0x00, 0x00, _,         _)
+DEFINE_LEVEL("DONJON",         LEVEL_UNKNOWN_3,        COURSE_NONE,     donjon,           generic,  20000,    0x00, 0x00, 0x00, _,         _)
 DEFINE_LEVEL("TERESA OBAKE",   LEVEL_BBH,              COURSE_BBH,      bbh,              spooky,   28000,    0x28, 0x28, 0x28, sDynBBH,   sCamBBH)
 DEFINE_LEVEL("YYAMA1 % YSLD1", LEVEL_CCM,              COURSE_CCM,      ccm,              snow,     17000,    0x10, 0x38, 0x38, _,         sCamCCM)
 DEFINE_LEVEL("SELECT ROOM",    LEVEL_CASTLE,           COURSE_NONE,     castle_inside,    inside,   20000,    0x20, 0x20, 0x30, _,         sCamCastle)
