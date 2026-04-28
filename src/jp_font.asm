@@ -1,5 +1,6 @@
 .ifdef OPTION_JP_FONT
 
+.sym off
 .definelabel texture_hud_char_0, 0x02000000
 .definelabel texture_hud_char_1, 0x02000200
 .definelabel texture_hud_char_2, 0x02000400
@@ -51,10 +52,11 @@
 
 .definelabel menu_hud_lut, 0x0700abd0
 .definelabel menu_font_lut, 0x0700b840
+.sym on
 
 // Segment 0x02
 
-// ALIGNMENT AGH, inside bracketed address is ram address.
+// ALIGNMENT AGH
 
 .sym off
 
@@ -413,6 +415,263 @@ texture_font_char_jp_interpunct, \
 texture_font_char_jp_star_hollow, \
 0x0, \
 0x0
+.endarea
+
+/* dialog_text_DIALOG_000 - seg2_dialog_table */
+.org 0x02007d34
+.area 0x02010a68 - 0x02007d34, 0
+.importobj "obj/jp_font/sex2/hooks/define_dialog.o"
+.endarea
+
+/* seg2_dialog_table */
+.org 0x02010a68
+.area 0x02010d14 - 0x02010a68, 0
+.word \
+dialog_entry_DIALOG_000, \
+dialog_entry_DIALOG_001, \
+dialog_entry_DIALOG_002, \
+dialog_entry_DIALOG_003, \
+dialog_entry_DIALOG_004, \
+dialog_entry_DIALOG_005, \
+dialog_entry_DIALOG_006, \
+dialog_entry_DIALOG_007, \
+dialog_entry_DIALOG_008, \
+dialog_entry_DIALOG_009, \
+dialog_entry_DIALOG_010, \
+dialog_entry_DIALOG_011, \
+dialog_entry_DIALOG_012, \
+dialog_entry_DIALOG_013, \
+dialog_entry_DIALOG_014, \
+dialog_entry_DIALOG_015, \
+dialog_entry_DIALOG_016, \
+dialog_entry_DIALOG_017, \
+dialog_entry_DIALOG_018, \
+dialog_entry_DIALOG_019, \
+dialog_entry_DIALOG_020, \
+dialog_entry_DIALOG_021, \
+dialog_entry_DIALOG_022, \
+dialog_entry_DIALOG_023, \
+dialog_entry_DIALOG_024, \
+dialog_entry_DIALOG_025, \
+dialog_entry_DIALOG_026, \
+dialog_entry_DIALOG_027, \
+dialog_entry_DIALOG_028, \
+dialog_entry_DIALOG_029, \
+dialog_entry_DIALOG_030, \
+dialog_entry_DIALOG_031, \
+dialog_entry_DIALOG_032, \
+dialog_entry_DIALOG_033, \
+dialog_entry_DIALOG_034, \
+dialog_entry_DIALOG_035, \
+dialog_entry_DIALOG_036, \
+dialog_entry_DIALOG_037, \
+dialog_entry_DIALOG_038, \
+dialog_entry_DIALOG_039, \
+dialog_entry_DIALOG_040, \
+dialog_entry_DIALOG_041, \
+dialog_entry_DIALOG_042, \
+dialog_entry_DIALOG_043, \
+dialog_entry_DIALOG_044, \
+dialog_entry_DIALOG_045, \
+dialog_entry_DIALOG_046, \
+dialog_entry_DIALOG_047, \
+dialog_entry_DIALOG_048, \
+dialog_entry_DIALOG_049, \
+dialog_entry_DIALOG_050, \
+dialog_entry_DIALOG_051, \
+dialog_entry_DIALOG_052, \
+dialog_entry_DIALOG_053, \
+dialog_entry_DIALOG_054, \
+dialog_entry_DIALOG_055, \
+dialog_entry_DIALOG_056, \
+dialog_entry_DIALOG_057, \
+dialog_entry_DIALOG_058, \
+dialog_entry_DIALOG_059, \
+dialog_entry_DIALOG_060, \
+dialog_entry_DIALOG_061, \
+dialog_entry_DIALOG_062, \
+dialog_entry_DIALOG_063, \
+dialog_entry_DIALOG_064, \
+dialog_entry_DIALOG_065, \
+dialog_entry_DIALOG_066, \
+dialog_entry_DIALOG_067, \
+dialog_entry_DIALOG_068, \
+dialog_entry_DIALOG_069, \
+dialog_entry_DIALOG_070, \
+dialog_entry_DIALOG_071, \
+dialog_entry_DIALOG_072, \
+dialog_entry_DIALOG_073, \
+dialog_entry_DIALOG_074, \
+dialog_entry_DIALOG_075, \
+dialog_entry_DIALOG_076, \
+dialog_entry_DIALOG_077, \
+dialog_entry_DIALOG_078, \
+dialog_entry_DIALOG_079, \
+dialog_entry_DIALOG_080, \
+dialog_entry_DIALOG_081, \
+dialog_entry_DIALOG_082, \
+dialog_entry_DIALOG_083, \
+dialog_entry_DIALOG_084, \
+dialog_entry_DIALOG_085, \
+dialog_entry_DIALOG_086, \
+dialog_entry_DIALOG_087, \
+dialog_entry_DIALOG_088, \
+dialog_entry_DIALOG_089, \
+dialog_entry_DIALOG_090, \
+dialog_entry_DIALOG_091, \
+dialog_entry_DIALOG_092, \
+dialog_entry_DIALOG_093, \
+dialog_entry_DIALOG_094, \
+dialog_entry_DIALOG_095, \
+dialog_entry_DIALOG_096, \
+dialog_entry_DIALOG_097, \
+dialog_entry_DIALOG_098, \
+dialog_entry_DIALOG_099, \
+dialog_entry_DIALOG_100, \
+dialog_entry_DIALOG_101, \
+dialog_entry_DIALOG_102, \
+dialog_entry_DIALOG_103, \
+dialog_entry_DIALOG_104, \
+dialog_entry_DIALOG_105, \
+dialog_entry_DIALOG_106, \
+dialog_entry_DIALOG_107, \
+dialog_entry_DIALOG_108, \
+dialog_entry_DIALOG_109, \
+dialog_entry_DIALOG_110, \
+dialog_entry_DIALOG_111, \
+dialog_entry_DIALOG_112, \
+dialog_entry_DIALOG_113, \
+dialog_entry_DIALOG_114, \
+dialog_entry_DIALOG_115, \
+dialog_entry_DIALOG_116, \
+dialog_entry_DIALOG_117, \
+dialog_entry_DIALOG_118, \
+dialog_entry_DIALOG_119, \
+dialog_entry_DIALOG_120, \
+dialog_entry_DIALOG_121, \
+dialog_entry_DIALOG_122, \
+dialog_entry_DIALOG_123, \
+dialog_entry_DIALOG_124, \
+dialog_entry_DIALOG_125, \
+dialog_entry_DIALOG_126, \
+dialog_entry_DIALOG_127, \
+dialog_entry_DIALOG_128, \
+dialog_entry_DIALOG_129, \
+dialog_entry_DIALOG_130, \
+dialog_entry_DIALOG_131, \
+dialog_entry_DIALOG_132, \
+dialog_entry_DIALOG_133, \
+dialog_entry_DIALOG_134, \
+dialog_entry_DIALOG_135, \
+dialog_entry_DIALOG_136, \
+dialog_entry_DIALOG_137, \
+dialog_entry_DIALOG_138, \
+dialog_entry_DIALOG_139, \
+dialog_entry_DIALOG_140, \
+dialog_entry_DIALOG_141, \
+dialog_entry_DIALOG_142, \
+dialog_entry_DIALOG_143, \
+dialog_entry_DIALOG_144, \
+dialog_entry_DIALOG_145, \
+dialog_entry_DIALOG_146, \
+dialog_entry_DIALOG_147, \
+dialog_entry_DIALOG_148, \
+dialog_entry_DIALOG_149, \
+dialog_entry_DIALOG_150, \
+dialog_entry_DIALOG_151, \
+dialog_entry_DIALOG_152, \
+dialog_entry_DIALOG_153, \
+dialog_entry_DIALOG_154, \
+dialog_entry_DIALOG_155, \
+dialog_entry_DIALOG_156, \
+dialog_entry_DIALOG_157, \
+dialog_entry_DIALOG_158, \
+dialog_entry_DIALOG_159, \
+dialog_entry_DIALOG_160, \
+dialog_entry_DIALOG_161, \
+dialog_entry_DIALOG_162, \
+dialog_entry_DIALOG_163, \
+dialog_entry_DIALOG_164, \
+dialog_entry_DIALOG_165, \
+dialog_entry_DIALOG_166, \
+dialog_entry_DIALOG_167, \
+dialog_entry_DIALOG_168, \
+dialog_entry_DIALOG_169, \
+    0x0
+.endarea
+
+/* seg2_course_name_table_COURSE_BOB - seg2_course_name_table*/
+.org 0x02010d14
+.area 0x02010f68 - 0x02010d14, 0
+.importobj "obj/jp_font/sex2/hooks/define_course.o"
+.endarea
+
+/* seg2_course_name_table */
+.org 0x02010f68
+.area 0x02010fd4 - 0x02010f68, 0
+.word \
+seg2_course_name_table_COURSE_BOB, \
+seg2_course_name_table_COURSE_WF, \
+seg2_course_name_table_COURSE_JRB, \
+seg2_course_name_table_COURSE_CCM, \
+seg2_course_name_table_COURSE_BBH, \
+seg2_course_name_table_COURSE_HMC, \
+seg2_course_name_table_COURSE_LLL, \
+seg2_course_name_table_COURSE_SSL, \
+seg2_course_name_table_COURSE_DDD, \
+seg2_course_name_table_COURSE_SL, \
+seg2_course_name_table_COURSE_WDW, \
+seg2_course_name_table_COURSE_TTM, \
+seg2_course_name_table_COURSE_THI, \
+seg2_course_name_table_COURSE_TTC, \
+seg2_course_name_table_COURSE_RR, \
+seg2_course_name_table_COURSE_BITDW, \
+seg2_course_name_table_COURSE_BITFS, \
+seg2_course_name_table_COURSE_BITS, \
+seg2_course_name_table_COURSE_PSS, \
+seg2_course_name_table_COURSE_COTMC, \
+seg2_course_name_table_COURSE_TOTWC, \
+seg2_course_name_table_COURSE_VCUTM, \
+seg2_course_name_table_COURSE_WMOTR, \
+seg2_course_name_table_COURSE_SA, \
+seg2_course_name_table_COURSE_CAKE_END, \
+seg2_course_name_table_castle_secret_stars, \
+    0x0
+.endarea
+
+/* act_name_COURSE_BOB_1 - seg2_act_name_table */
+.org 0x02010fd4
+.area 0x0201192c - 0x02010fd4, 0
+.importobj "obj/jp_font/sex2/hooks/define_act.o"
+.endarea
+
+/* seg2_act_name_table */
+.org 0x0201192c
+.area 0x02011ab8 - 0x0201192c, 0
+.word \
+act_name_COURSE_BOB_1, act_name_COURSE_BOB_2, act_name_COURSE_BOB_3, act_name_COURSE_BOB_4, act_name_COURSE_BOB_5, act_name_COURSE_BOB_6, \
+act_name_COURSE_WF_1, act_name_COURSE_WF_2, act_name_COURSE_WF_3, act_name_COURSE_WF_4, act_name_COURSE_WF_5, act_name_COURSE_WF_6, \
+act_name_COURSE_JRB_1, act_name_COURSE_JRB_2, act_name_COURSE_JRB_3, act_name_COURSE_JRB_4, act_name_COURSE_JRB_5, act_name_COURSE_JRB_6, \
+act_name_COURSE_CCM_1, act_name_COURSE_CCM_2, act_name_COURSE_CCM_3, act_name_COURSE_CCM_4, act_name_COURSE_CCM_5, act_name_COURSE_CCM_6, \
+act_name_COURSE_BBH_1, act_name_COURSE_BBH_2, act_name_COURSE_BBH_3, act_name_COURSE_BBH_4, act_name_COURSE_BBH_5, act_name_COURSE_BBH_6, \
+act_name_COURSE_HMC_1, act_name_COURSE_HMC_2, act_name_COURSE_HMC_3, act_name_COURSE_HMC_4, act_name_COURSE_HMC_5, act_name_COURSE_HMC_6, \
+act_name_COURSE_LLL_1, act_name_COURSE_LLL_2, act_name_COURSE_LLL_3, act_name_COURSE_LLL_4, act_name_COURSE_LLL_5, act_name_COURSE_LLL_6, \
+act_name_COURSE_SSL_1, act_name_COURSE_SSL_2, act_name_COURSE_SSL_3, act_name_COURSE_SSL_4, act_name_COURSE_SSL_5, act_name_COURSE_SSL_6, \
+act_name_COURSE_DDD_1, act_name_COURSE_DDD_2, act_name_COURSE_DDD_3, act_name_COURSE_DDD_4, act_name_COURSE_DDD_5, act_name_COURSE_DDD_6, \
+act_name_COURSE_SL_1, act_name_COURSE_SL_2, act_name_COURSE_SL_3, act_name_COURSE_SL_4, act_name_COURSE_SL_5, act_name_COURSE_SL_6, \
+act_name_COURSE_WDW_1, act_name_COURSE_WDW_2, act_name_COURSE_WDW_3, act_name_COURSE_WDW_4, act_name_COURSE_WDW_5, act_name_COURSE_WDW_6, \
+act_name_COURSE_TTM_1, act_name_COURSE_TTM_2, act_name_COURSE_TTM_3, act_name_COURSE_TTM_4, act_name_COURSE_TTM_5, act_name_COURSE_TTM_6, \
+act_name_COURSE_THI_1, act_name_COURSE_THI_2, act_name_COURSE_THI_3, act_name_COURSE_THI_4, act_name_COURSE_THI_5, act_name_COURSE_THI_6, \
+act_name_COURSE_TTC_1, act_name_COURSE_TTC_2, act_name_COURSE_TTC_3, act_name_COURSE_TTC_4, act_name_COURSE_TTC_5, act_name_COURSE_TTC_6, \
+act_name_COURSE_RR_1, act_name_COURSE_RR_2, act_name_COURSE_RR_3, act_name_COURSE_RR_4, act_name_COURSE_RR_5, act_name_COURSE_RR_6, \
+extra_text_0, \
+extra_text_1, \
+extra_text_2, \
+extra_text_3, \
+extra_text_4, \
+extra_text_5, \
+extra_text_6, \
+    0x0
 .endarea
 
 .headersize SEC_MAIN_HEADERSIZE

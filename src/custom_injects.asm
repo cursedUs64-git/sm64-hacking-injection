@@ -12,7 +12,6 @@
 .importobj "obj/jp_font/ingame_menu/get_str_x_pos_from_center_scale.o"
 .importobj "obj/jp_font/ingame_menu/adjust_pos_and_print_period_char.o"
 .importobj "obj/jp_font/ingame_menu/handle_dialog_text_and_pages.o"
-.importobj "obj/jp_font/ingame_menu/render_dialog_box_type.o"
 .endif
 
 .ifdef OPTION_GIGALEAK_LEVELS

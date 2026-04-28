@@ -132,7 +132,7 @@ void render_dialog_entries(void) {
             break;
     }
 
-    cahstom_render_dialog_box_type(dialog, dialog->linesPerBox);
+    render_dialog_box_type(dialog, dialog->linesPerBox);
 
     gDPSetScissor(gDisplayListHead++, G_SC_NON_INTERLACE,
                   ensure_nonnegative(dialog->leftOffset),
@@ -147,8 +147,8 @@ void render_dialog_entries(void) {
         render_dialog_triangle_choice();
     }
 
-    gDPSetScissor(gDisplayListHead++, G_SC_NON_INTERLACE, 2, 2, SCREEN_WIDTH - BORDER_HEIGHT / 2,
-                  SCREEN_HEIGHT - BORDER_HEIGHT / 2);
+    gDPSetScissor(gDisplayListHead++, G_SC_NON_INTERLACE, 2, 2, SCREEN_WIDTH,
+                  SCREEN_HEIGHT);
 
     if (gNextDialogPageStartStrIndex != -1 && gMenuState == MENU_STATE_DIALOG_OPEN) {
         render_dialog_triangle_next(dialog->linesPerBox);

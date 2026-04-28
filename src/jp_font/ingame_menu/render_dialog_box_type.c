@@ -37,7 +37,7 @@ enum MenuState {
 #define Y_VAL1 5.0
 #define Y_VAL2 5.0f
 
-void cahstom_render_dialog_box_type(struct DialogEntry *dialog, s8 linesPerBox) {
+void render_dialog_box_type(struct DialogEntry *dialog, s8 linesPerBox) {
     // UNUSED u8 filler[4];
 
     create_dl_translation_matrix(MENU_MTX_NOPUSH, dialog->leftOffset, dialog->width, 0);
