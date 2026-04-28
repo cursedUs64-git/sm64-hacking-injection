@@ -39,7 +39,6 @@
 #include "geo_commands.h"
 #include "level_commands.h"
 
-
 #define o gCurrentObject
 
 s8 obj_return_home_if_safe(struct Object *obj, f32 homeX, f32 y, f32 homeZ, s32 dist);
