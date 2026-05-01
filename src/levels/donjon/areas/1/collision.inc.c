@@ -1234,3 +1234,4 @@ const Collision donjon_info[] = {
 	COL_TRI_STOP(),
 	COL_END(),
 };
+

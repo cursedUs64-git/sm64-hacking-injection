@@ -1,7 +1,5 @@
 #include "basicheader.h"
 
-enum DialogBoxPageState { DIALOG_PAGE_STATE_NONE, DIALOG_PAGE_STATE_SCROLL, DIALOG_PAGE_STATE_END };
-
 #define X_VAL3 5.0f
 #define Y_VAL3 20
 

@@ -65,7 +65,11 @@ INC_C_SRCS := $(patsubst %.png,%.inc.c,$(PNG_SRCS))
 # ----------------------------
 # Flags
 # ----------------------------
-CFLAGS := $(INCLUDE_FLAGS) -O2 -G0 -Wo,-loopunroll,0 -non_shared -Wab,-r4300_mul -Xcpluscomm -signed -32 -nostdinc -DTARGET_N64 -D_LANGUAGE_C -mips2 -w
+CFLAGS := $(INCLUDE_FLAGS) -O2 -G0 -Wo,-loopunroll,0 -non_shared -Wab,-r4300_mul -Xcpluscomm -signed -32 -nostdinc -DTARGET_N64 -D_LANGUAGE_C -mips2 -fullwarn
+
+# Per-file custom flags
+CFLAGS_EXTRA_$(OBJ_ROOT_DIR)/ping/model.o := -w # gigaleak has some array warnings which we can safely ignore
+
 ARMIPSFLAGS := -sym $(TMP_DIR)/sym.txt -strequ ROM_IN $(ROM_IN) -strequ ROM_OUT $(ROM_OUT)
 
 # ----------------------------
@@ -117,7 +121,7 @@ obj_dirs:
 # ----------------------------
 $(OBJ_ROOT_DIR)/%.o: $(SRC_ROOT_DIR)/%.c | obj_dirs tools
 	@echo "CC $< -> $@"
-	@$(CROSS_CC) $(CFLAGS) -c $< -o $@
+	@$(CROSS_CC) $(CFLAGS) $(CFLAGS_EXTRA_$@) -c $< -o $@
 
 # ----------------------------
 # Inject into the ROM

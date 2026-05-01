@@ -1,5 +1,7 @@
 #include "basicheader.h"
 
+extern u8 *alloc_ia8_text_from_i1(u8 *in, s16 width, s16 height);
+
 void jp_render_generic_char(u8 c)
 {
     void **fontLUT = segmented_to_virtual(main_font_lut);

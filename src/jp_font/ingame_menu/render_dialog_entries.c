@@ -10,13 +10,11 @@ extern f32 gDialogBoxScale;
 extern s16 gNextDialogPageStartStrIndex;
 extern s16 gDialogPageStartStrIndex;
 extern s16 gDialogScrollOffsetY;
+
+extern void cahstom_handle_dialog_text_and_pages(s8 colorMode, struct DialogEntry *dialog);
+
 #define DIALOG_BOX_ANGLE_DEFAULT 90.0f
 #define DIALOG_BOX_SCALE_DEFAULT 19.0f
-
-enum DialogBoxType {
-    DIALOG_TYPE_ROTATE, // used in NPCs and level messages
-    DIALOG_TYPE_ZOOM    // used in signposts and wall signs and etc
-};
 
 enum MenuState {
     MENU_STATE_0,

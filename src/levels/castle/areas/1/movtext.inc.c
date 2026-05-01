@@ -29,3 +29,4 @@ const struct MovtexQuadCollection castle_movtex_water[] = {
 	{0, castle_movtex_water_data},
 	{0xffff,	NULL},
 };
+

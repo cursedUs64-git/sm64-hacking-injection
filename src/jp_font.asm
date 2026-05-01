@@ -417,10 +417,14 @@ texture_font_char_jp_star_hollow, \
 0x0
 .endarea
 
+// TODO (Makefile related):
+;  Instead of making text unreadable (since it's in hex for now), use CFE to convert them to hex so it's readable
+
 /* dialog_text_DIALOG_000 - seg2_dialog_table */
 .org 0x02007d34
 .area 0x02010a68 - 0x02007d34, 0
 .importobj "obj/jp_font/sex2/hooks/define_dialog.o"
+.importobj "obj/jp_font/sex2/hooks/misc_hud_chars.o"
 .endarea
 
 /* seg2_dialog_table */

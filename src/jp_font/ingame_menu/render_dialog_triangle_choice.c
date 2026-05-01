@@ -32,11 +32,6 @@ enum MenuState {
     MENU_STATE_COURSE_COMPLETE_SCREEN_OPEN = MENU_STATE_1
 };
 
-enum DialogBoxType {
-    DIALOG_TYPE_ROTATE, // used in NPCs and level messages
-    DIALOG_TYPE_ZOOM    // used in signposts and wall signs and etc
-};
-
 void render_dialog_triangle_choice(void) {
     if (gMenuState == MENU_STATE_DIALOG_OPEN) {
         handle_menu_scrolling(MENU_SCROLL_HORIZONTAL, &gMenuLineNum, 1, 2);

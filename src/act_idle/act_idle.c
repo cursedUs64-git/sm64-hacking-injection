@@ -1,4 +1,5 @@
 #include "basicheader.h"
+#include "game/mario_actions_stationary.h"
 
 s32 custom_act_idle(struct MarioState *m) {
     if (m->quicksandDepth > 30.0f) {

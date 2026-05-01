@@ -8,7 +8,9 @@ extern s16 gNextDialogPageStartStrIndex;
 extern s16 gDialogPageStartStrIndex;
 extern s16 gDialogScrollOffsetY;
 
-enum DialogBoxPageState { DIALOG_PAGE_STATE_NONE, DIALOG_PAGE_STATE_SCROLL, DIALOG_PAGE_STATE_END };
+extern void handle_dialog_scroll_page_state(s8 lineNum, s8 totalLines, s8 *pageState, s8 *xMatrix,
+                                     s16 *linePos);
+extern void render_star_count_dialog_text(s8 *xMatrix, s16 *linePos);
 
 enum MenuState {
     MENU_STATE_0,

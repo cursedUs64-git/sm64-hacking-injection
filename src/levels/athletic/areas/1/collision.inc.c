@@ -822,3 +822,4 @@ const Collision test_info[] = {
 	COL_TRI_STOP(),
 	COL_END(),
 };
+

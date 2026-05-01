@@ -13,13 +13,6 @@
 #include "sex.h"
 
 /*
- * shut multiple infuriatingly annoying warnings up
- */
-#pragma GCC diagnostic ignored "-Wmissing-braces"				/* missing Vtx braces */
-#pragma GCC diagnostic ignored "-Wmissing-field-initializers"	/* missing AnimeRecord variable */
-#pragma GCC diagnostic ignored "-Woverflow"						/* shut CCM the hell up */
-
-/*
  * from here on out, I'll be defining a bunch of original-source macros, types
  * and other things for the sake of readability, basically turning this single
  * file (with GEX.H) into a near-automatic leak importer

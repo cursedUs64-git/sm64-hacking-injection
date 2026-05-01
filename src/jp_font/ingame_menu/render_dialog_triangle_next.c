@@ -2,11 +2,6 @@
 
 extern s8 gDialogBoxType;
 
-enum DialogBoxType {
-    DIALOG_TYPE_ROTATE, // used in NPCs and level messages
-    DIALOG_TYPE_ZOOM    // used in signposts and wall signs and etc
-};
-
 #define X_VAL5 123.0f
 #define Y_VAL5_1 -20
 #define Y_VAL5_2 2

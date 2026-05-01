@@ -708,3 +708,4 @@ const Collision castle_info[] = {
 	COL_WATER_BOX(0, -8192,-8192, 8192, 8192, 0x300),
 	COL_END(),
 };
+

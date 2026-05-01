@@ -1576,3 +1576,4 @@ const Gfx gfx_stage2[] = {
 	gsSPSetGeometryMode(G_SHADING_SMOOTH),
 	gsSPEndDisplayList() 
 };
+

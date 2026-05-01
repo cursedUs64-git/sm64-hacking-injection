@@ -5,11 +5,6 @@ extern s8 gMenuState;
 extern f32 gDialogBoxAngle;
 extern f32 gDialogBoxScale;
 
-enum DialogBoxType {
-    DIALOG_TYPE_ROTATE, // used in NPCs and level messages
-    DIALOG_TYPE_ZOOM    // used in signposts and wall signs and etc
-};
-
 enum MenuState {
     MENU_STATE_0,
     MENU_STATE_1,
@@ -33,9 +28,9 @@ enum MenuState {
     MENU_STATE_COURSE_COMPLETE_SCREEN_OPEN = MENU_STATE_1
 };
 
-#define X_VAL1 -7.0f
-#define Y_VAL1 5.0
-#define Y_VAL2 5.0f
+#define X_VAL1 -5.0f
+#define Y_VAL1 2.0
+#define Y_VAL2 4
 
 void render_dialog_box_type(struct DialogEntry *dialog, s8 linesPerBox) {
     // UNUSED u8 filler[4];
