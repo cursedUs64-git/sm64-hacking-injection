@@ -1,7 +1,5 @@
 #include "basicheader.h"
 
-extern s8 gDialogBoxType;
-
 #define X_VAL5 123.0f
 #define Y_VAL5_1 -20
 #define Y_VAL5_2 2

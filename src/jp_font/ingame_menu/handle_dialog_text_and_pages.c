@@ -6,7 +6,6 @@
 extern s8 gMenuState;
 extern s16 gNextDialogPageStartStrIndex;
 extern s16 gDialogPageStartStrIndex;
-extern s16 gDialogScrollOffsetY;
 
 extern void handle_dialog_scroll_page_state(s8 lineNum, s8 totalLines, s8 *pageState, s8 *xMatrix,
                                      s16 *linePos);
